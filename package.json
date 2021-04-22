@@ -1,0 +1,52 @@
+{
+  "name": "server-livecheck",
+  "version": "1.0.0",
+  "description": "utility tool for checking if servers are online by urls",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "node --expose-gc ./node_modules/jest-cli/bin/jest.js --testPathPattern=\".*(\\.test)\\.ts\" --runInBand --forceExit --detectOpenHandles --logHeapUsage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maksymsnytchuk/server-livecheck.git"
+  },
+  "keywords": [
+    "livecheck",
+    "server-ping"
+  ],
+  "author": "maksymsnytchuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maksymsnytchuk/server-livecheck/issues"
+  },
+  "homepage": "https://github.com/maksymsnytchuk/server-livecheck#readme",
+  "devDependencies": {
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "jest": "^24.8.0",
+    "jest-cli": "^24.9.0",
+    "ts-jest": "^24.0.1"
+  },
+  "dependencies": {
+    "@types/jest": "^26.0.22",
+    "@types/node-fetch": "^2.5.10",
+    "node-fetch": "^2.6.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "setupFiles": [
+      "<rootDir>src/test/setup-tests.ts"
+    ],
+    "testRegex": "(/(src)/.*(\\.|/)test)\\.(js|ts)$",
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "json"
+    ]
+  }
+}
